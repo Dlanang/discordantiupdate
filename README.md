@@ -7,7 +7,7 @@ Script shell untuk **memblokir auto-update Discord** pada Arch Linux. Cocok digu
 ## 📦 Fitur
 
 * Menghapus updater bawaan Discord.
-* Membuat symbolic link ke `/bin/true` agar update tidak berjalan.
+* Modifikasi app.asar/splashupdate.js
 * Otomatis backup sebelum modifikasi.
 * Sederhana dan cepat dijalankan.
 
