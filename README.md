@@ -38,8 +38,7 @@ Script akan:
 
 * Memastikan direktori Discord terdeteksi.
 * Menghapus updater.
-* Membuat symlink ke `/bin/true` agar update tidak bisa berjalan.
-
+  
 ### 3. **Jalankan Discord seperti biasa**
 
 ```bash
@@ -65,7 +64,9 @@ discord
 Jika kamu ingin **mengembalikan fungsi update**, cukup hapus symlink dan restore backup:
 
 ```bash
-sudo rm /opt/discord/resources/app.asar.unpacked/modules/discord_updater/* 
+cd /opt/discord/resources/
+ls
+app.asar.bak
 # restore dari backup jika ada
 ```
 
