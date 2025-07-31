@@ -3,6 +3,7 @@
 DISCORD_PATH="/opt/discord"
 RESOURCE_PATH="$DISCORD_PATH/resources"
 ASAR="$RESOURCE_PATH/app.asar"
+ASAR_BAK="$RESOURCE_PATH/app.asar.bak"
 UNPACKED="$RESOURCE_PATH/app-unpacked"
 SPLASH_JS="$UNPACKED/app_bootstrap/splashScreen.js"
 
@@ -16,6 +17,13 @@ fi
 if ! command -v npx &> /dev/null; then
     echo "[!] npx tidak ditemukan. Install Node.js terlebih dahulu."
     exit 1
+fi
+
+if [[ ! -f "$ASAR_BAK" ]]; then
+    echo "[+] Membuat backup app.asar -> app.asar.bak..."
+    cp "$ASAR" "$ASAR_BAK"
+else
+    echo "[*] Backup sudah ada: $ASAR_BAK"
 fi
 
 echo "[+] Extracting app.asar..."
